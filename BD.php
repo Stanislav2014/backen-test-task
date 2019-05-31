@@ -12,7 +12,7 @@ class DbNode
     public function getDirs($id)
     {
         $pdo
-            return 
+            return
     }
 
 };
