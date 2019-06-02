@@ -1,6 +1,7 @@
 <?php
+require_once ('bootstrap.php');
 
-$database = new \App\DbNode();
+//$database = new \App\DbNode();
 
-$database->getDirs(2);
+//$database->getDirs(2);
 
