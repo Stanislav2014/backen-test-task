@@ -43,19 +43,7 @@ private static DB_PASS = '';
         return new self;
     }
 
-    public function get($attribute, $result = 1)
-    {
 
-        if (array_key_exists($attribute, $this->storage))
-        {
-            return
-        }
-
-
-
-     if ($result = null) {
-         echo 'не найден данный аттрибут';
-     }
 
 
 

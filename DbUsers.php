@@ -1,14 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: root
- * Date: 31.05.19
- * Time: 13:47
+ * User: stanislav
+ * Date: 02.06.19
+ * Time: 20:44
  */
+
 
 namespace App;
 
-class Db
+class DbUsers
 {
     private static $instance = null;
 
@@ -19,12 +20,15 @@ class Db
         \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
     );
 
-    private function __construct(){}
+    public function __construct($id)
+    {
+        $this->id = $id;
+
+    }
 
     private function __wakeup(){}
 
     private function __clone(){}
-
 
 
     public static function instance()
@@ -60,10 +64,13 @@ class Db
     }
 
 
-    public function getDirs($id)
+    public function get($attribute, $result = 1)
     {
+        $storage = self::run("select storage from users where id = {$this->id}");
 
-
+        return $storage->fetchAll();
     }
 
-};
+    public function set(){}
+
+}
